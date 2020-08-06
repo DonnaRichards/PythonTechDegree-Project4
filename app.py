@@ -143,7 +143,7 @@ def get_price_from_user():
     valid = False
     while not valid:
         pricestr = input("Please enter product price: ")
-        if re.search('\$?\.?\d+', pricestr):
+        if re.fullmatch('^\$?\d+(\.?\d\d|\d?)', pricestr):
             price = format_price_str_to_int(pricestr)
             valid = True
         else:
